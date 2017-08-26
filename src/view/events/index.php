@@ -54,58 +54,32 @@
     <h1 class='font--chewy size--60 color--orange bg-title container'>Komende events</h1>
   </header>
 
-  <article class="upcoming__event container container--column">
-    <strong class='font--opensans-bold size--14 color--red'>#tag</strong>
-    <strong class='upcoming__event__date font--chewy size--24 color--blue'>26/12/2017</strong>
+  <?php
+  for ($i = 0; $i < 3; $i++) {
+    ?>
+    <article class="upcoming__event container container--column">
+      <strong class='font--opensans-bold size--14 color--red'>#tag</strong>
+      <strong class='upcoming__event__date font--chewy size--24 color--blue'><?php echo date('d/m/y', strtotime($events[$i]["start"])); ?></strong>
 
-    <div class="upcoming__event__poster">
-      <header class="container upcoming__event__poster__header">
-        <h2 class="font--opensans-semibold size--14 color--white">Waarschijnlijk zullen wij het nooit weten</h2>
-      </header>
-      <img class='upcoming__event__poster__image' src="assets/img/example.jpg" alt="">
-    </div>
+      <div class="upcoming__event__poster">
+        <header class="container upcoming__event__poster__header">
+          <h2 class="font--opensans-semibold size--14 color--white"><?php echo $events[$i]["title"] ?></h2>
+        </header>
+        <img class='upcoming__event__poster__image' src="assets/img/example.jpg" alt="">
+      </div>
 
-    <p class='upcoming__event__desc font--opensans-semibold size--14'>
-      Te midden van vele gele kuikentjes wordt een zwart kuikentje geboren...
-    </p>
-  </article>
-
-  <article class="upcoming__event container container--column">
-    <strong class='font--opensans-bold size--14 color--red'>#tag</strong>
-    <strong class='upcoming__event__date font--chewy size--24 color--blue'>26/12/2017</strong>
-
-    <div class="upcoming__event__poster">
-      <header class="container upcoming__event__poster__header">
-        <h2 class="font--opensans-semibold size--14 color--white">Waarschijnlijk zullen wij het nooit weten</h2>
-      </header>
-      <img class='upcoming__event__poster__image' src="assets/img/example.jpg" alt="">
-    </div>
-
-    <p class='upcoming__event__desc font--opensans-semibold size--14'>
-      Te midden van vele gele kuikentjes wordt een zwart kuikentje geboren...
-    </p>
-  </article>
-
-  <article class="upcoming__event container container--column">
-    <strong class='font--opensans-bold size--14 color--red'>#tag</strong>
-    <strong class='upcoming__event__date font--chewy size--24 color--blue'>26/12/2017</strong>
-
-    <div class="upcoming__event__poster">
-      <header class="container upcoming__event__poster__header">
-        <h2 class="font--opensans-semibold size--14 color--white">Waarschijnlijk zullen wij het nooit weten</h2>
-      </header>
-      <img class='upcoming__event__poster__image' src="assets/img/example.jpg" alt="">
-    </div>
-
-    <p class='upcoming__event__desc font--opensans-semibold size--14'>
-      Te midden van vele gele kuikentjes wordt een zwart kuikentje geboren...
-    </p>
-  </article>
+      <p class='upcoming__event__desc font--opensans-semibold size--14'>
+        <?php echo $events[$i]["description"] ?>
+      </p>
+    </article>
+    <?php
+  }
+  ?>
 
   <div class="full--Width__wrap container margin--bottom">
-    <a href="#" class="button">Meer voorstellingen</a>
+    <a class="button" href="?page=programma">Meer voorstellingen</a>
   </div>
-</section>
+
 
 <section class="tinnenpot container margin--bottom">
   <header class="tinnenpot__header">

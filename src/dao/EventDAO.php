@@ -79,6 +79,20 @@ class EventDAO extends DAO {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
+  public function selectTagsByEventId($id) {
+    $sql = "SELECT
+      ma3_spekken_tags.*,
+      ma3_spekken_events_tags.event_id
+      FROM `ma3_spekken_tags`
+      RIGHT OUTER JOIN `ma3_spekken_events_tags` ON ma3_spekken_events_tags.tag_id = ma3_spekken_tags.id
+      WHERE ma3_spekken_events_tags.event_id = :id
+    ";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   private function _getEventIdsFromResult(&$result) {
     $eventIds = array();
     foreach($result as &$row) {

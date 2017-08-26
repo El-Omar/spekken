@@ -11,8 +11,8 @@
           <h2 class='periodes__title font--opensans-bold size--24'>Periodes</h2>
         </header>
         <div class=''>
-          <a class='periodes__button periodes__button--selected' href="#">Kerstvakantie</a>
-          <a class='periodes__button' href="#">Paasvakantie</a>
+          <a data-id="1" class='periodes__button periodes__button--selected' href="#">Kerstvakantie</a>
+          <a data-id="2" class='periodes__button' href="#">Paasvakantie</a>
         </div>
       </aside>
       <a class="filter__toggle filter__toggle--first" href="#">Filter</a>
@@ -25,16 +25,16 @@
 
       <a class='datums__button datums__button--selected' href="#">
         <h3 class='font--chewy size--24'>Week 1</h3>
-        <p class="container dates font--opensans-bold">
+        <p class="week1 container dates font--opensans-bold">
           Maandag 27/12/17 <br />
           t.e.m. <br />
           Vrijdag 31/12/17
         </p>
       </a>
 
-      <a class='datums__button datums__button' href="#">
+      <a class='datums__button' href="#">
         <h3 class='font--chewy size--24'>Week 2</h3>
-        <p class="container dates font--opensans-bold">
+        <p class="week2 container dates font--opensans-bold">
           Zaterdag 01/01/18 <br />
           t.e.m. <br />
           Maandag 09/01/18
@@ -101,175 +101,39 @@
 
 
     <div class="programma__events container container--row--wrap">
-
-      <a class="programma__event__link" href="?page=details">
+      <?php
+      foreach ($events as $event) {
+      ?>
         <article class="programma__event">
           <header class="programma__event__header">
             <div class="programma__event__date">
               <strong class="font--opensans-bold color--red">Aankomend</strong>
-              <strong class="font--chewy size--24 programma__event__date__day">Maandag 28/12</strong>
+              <strong class="font--chewy size--24 programma__event__date__day">
+                <?php echo date('D d/m', strtotime($event["start"])); ?>
+              </strong>
             </div>
-            <strong class="programma__event__hour font--opensans-semibold">14:00u - 18:00u</strong>
+            <strong class="programma__event__hour font--opensans-semibold">
+              Om <?php echo date('G:i', strtotime($event["start"])); ?>
+            </strong>
           </header>
 
           <div class="programma__event__poster">
             <div class="programma__event__image--wrap">
               <img class="programma__event__image" src="assets/img/example.jpg" alt="Event" />
             </div>
-            <strong class="container programma__event__title">In de verte</strong>
+            <a class="programma__event__link" href="?page=details&amp;id=<?php echo $event["id"] ?>">
+              <strong class="container programma__event__title"><?php echo $event["title"] ?></strong>
+            </a>
           </div>
 
-          <strong class='programma__event__tag color--orange font--opensans-semibold'>Circus 2j - 8j</strong>
+          <strong class='programma__event__tag color--orange font--opensans-semibold'>
+            <?php
+            echo $event["start_age"] . " jaar - ";
+            if ($event["end_age"] < 99) echo $event["end_age"] ." jaar";
+            ?>
+          </strong>
         </article>
-      </a>
-
-      <a class="programma__event__link" href="?page=details">
-        <article class="programma__event">
-          <header class="programma__event__header">
-            <div class="programma__event__date">
-              <strong class="font--opensans-bold color--red">Aankomend</strong>
-              <strong class="font--chewy size--24 programma__event__date__day">Maandag 28/12</strong>
-            </div>
-            <strong class="programma__event__hour font--opensans-semibold">14:00u - 18:00u</strong>
-          </header>
-
-          <div class="programma__event__poster">
-            <div class="programma__event__image--wrap">
-              <img class="programma__event__image" src="assets/img/example.jpg" alt="Event" />
-            </div>
-            <strong class="container programma__event__title">In de verte</strong>
-          </div>
-
-          <strong class='programma__event__tag color--orange font--opensans-semibold'>Circus 2j - 8j</strong>
-        </article>
-      </a>
-
-      <a class="programma__event__link" href="?page=details">
-        <article class="programma__event">
-          <header class="programma__event__header">
-            <div class="programma__event__date">
-              <strong class="font--opensans-bold color--red">Aankomend</strong>
-              <strong class="font--chewy size--24 programma__event__date__day">Maandag 28/12</strong>
-            </div>
-            <strong class="programma__event__hour font--opensans-semibold">14:00u - 18:00u</strong>
-          </header>
-
-          <div class="programma__event__poster">
-            <div class="programma__event__image--wrap">
-              <img class="programma__event__image" src="assets/img/example.jpg" alt="Event" />
-            </div>
-            <strong class="container programma__event__title">In de verte</strong>
-          </div>
-
-          <strong class='programma__event__tag color--orange font--opensans-semibold'>Circus 2j - 8j</strong>
-        </article>
-      </a>
-
-      <a class="programma__event__link" href="?page=details">
-        <article class="programma__event">
-          <header class="programma__event__header">
-            <div class="programma__event__date">
-              <!-- <strong class="font--opensans-bold color--red">Aankomend</strong> -->
-              <strong class="font--chewy size--24 programma__event__date__day">Maandag 28/12</strong>
-            </div>
-            <strong class="programma__event__hour font--opensans-semibold">14:00u - 18:00u</strong>
-          </header>
-
-          <div class="programma__event__poster">
-            <div class="programma__event__image--wrap">
-              <img class="programma__event__image" src="assets/img/example.jpg" alt="Event" />
-            </div>
-            <strong class="container programma__event__title">In de verte</strong>
-          </div>
-
-          <strong class='programma__event__tag color--orange font--opensans-semibold'>Circus 2j - 8j</strong>
-        </article>
-      </a>
-
-      <a class="programma__event__link" href="?page=details">
-        <article class="programma__event">
-          <header class="programma__event__header">
-            <div class="programma__event__date">
-              <!-- <strong class="font--opensans-bold color--red">Aankomend</strong> -->
-              <strong class="font--chewy size--24 programma__event__date__day">Maandag 28/12</strong>
-            </div>
-            <strong class="programma__event__hour font--opensans-semibold">14:00u - 18:00u</strong>
-          </header>
-
-          <div class="programma__event__poster">
-            <div class="programma__event__image--wrap">
-              <img class="programma__event__image" src="assets/img/example.jpg" alt="Event" />
-            </div>
-            <strong class="container programma__event__title">In de verte</strong>
-          </div>
-
-          <strong class='programma__event__tag color--orange font--opensans-semibold'>Circus 2j - 8j</strong>
-        </article>
-      </a>
-
-      <a class="programma__event__link" href="?page=details">
-        <article class="programma__event">
-          <header class="programma__event__header">
-            <div class="programma__event__date">
-              <!-- <strong class="font--opensans-bold color--red">Aankomend</strong> -->
-              <strong class="font--chewy size--24 programma__event__date__day">Maandag 28/12</strong>
-            </div>
-            <strong class="programma__event__hour font--opensans-semibold">14:00u - 18:00u</strong>
-          </header>
-
-          <div class="programma__event__poster">
-            <div class="programma__event__image--wrap">
-              <img class="programma__event__image" src="assets/img/example.jpg" alt="Event" />
-            </div>
-            <strong class="container programma__event__title">In de verte</strong>
-          </div>
-
-          <strong class='programma__event__tag color--orange font--opensans-semibold'>Circus 2j - 8j</strong>
-        </article>
-      </a>
-
-      <a class="programma__event__link" href="?page=details">
-        <article class="programma__event">
-          <header class="programma__event__header">
-            <div class="programma__event__date">
-              <!-- <strong class="font--opensans-bold color--red">Aankomend</strong> -->
-              <strong class="font--chewy size--24 programma__event__date__day">Maandag 28/12</strong>
-            </div>
-            <strong class="programma__event__hour font--opensans-semibold">14:00u - 18:00u</strong>
-          </header>
-
-          <div class="programma__event__poster">
-            <div class="programma__event__image--wrap">
-              <img class="programma__event__image" src="assets/img/example.jpg" alt="Event" />
-            </div>
-            <strong class="container programma__event__title">In de verte</strong>
-          </div>
-
-          <strong class='programma__event__tag color--orange font--opensans-semibold'>Circus 2j - 8j</strong>
-        </article>
-      </a>
-
-      <a class="programma__event__link" href="?page=details">
-        <article class="programma__event">
-          <header class="programma__event__header">
-            <div class="programma__event__date">
-              <!-- <strong class="font--opensans-bold color--red">Aankomend</strong> -->
-              <strong class="font--chewy size--24 programma__event__date__day">Maandag 28/12</strong>
-            </div>
-            <strong class="programma__event__hour font--opensans-semibold">14:00u - 18:00u</strong>
-          </header>
-
-          <div class="programma__event__poster">
-            <div class="programma__event__image--wrap">
-              <img class="programma__event__image" src="assets/img/example.jpg" alt="Event" />
-            </div>
-            <strong class="container programma__event__title">In de verte</strong>
-          </div>
-
-          <strong class='programma__event__tag color--orange font--opensans-semibold'>Circus 2j - 8j</strong>
-        </article>
-      </a>
-
+      <?php } ?>
 
     </div>
 

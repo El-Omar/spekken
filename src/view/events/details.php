@@ -7,22 +7,37 @@
 
     <div class="details__content__wrap">
       <header class="details__content__header">
-        <h2 class="size--30 font--opensans-bold color--blue">In de verte</h2>
+        <h2 class="size--30 font--opensans-bold color--blue"><?php echo $event["title"] ?></h2>
       </header>
 
       <div class="details__image__wrap">
         <img class="details__image" src="assets/img/example.jpg" alt="Example" />
       </div>
-      <strong class="font--chewy size--24">Maandag 28/12/2017</strong>
-      <strong class="font--opensans-bold">14:00u - 18:00u</strong>
+      <strong class="font--chewy size--24"><?php echo date('D d/m/Y', strtotime($event["start"])); ?></strong>
+      <strong class="font--opensans-bold">
+        Om <?php echo date('G:i', strtotime($event["start"])); ?>
+      </strong>
     </div>
 
     <aside class="container container--column details__info">
       <div class="container container--column details__into__text">
         <strong>Theater type</strong>
-        <strong class="margin-text size--24 color--red font--chewy">Jeugd / Dans / Muziek</strong>
-        <strong>Performer</strong>
-        <strong class="margin-text size--24 color--red font--chewy">Judith De Klerk</strong>
+        <strong class="margin-text size--24 color--red font--chewy">
+          <?php
+          if (isset($event["tags"])) {
+            for ($i = 0; $i < count($event["tags"]); $i++) {
+              echo $event["tags"][$i]["tag"] . " / ";
+            }
+          }
+          ?>
+        </strong>
+        <strong>Leeftijd</strong>
+        <strong class="margin-text size--24 color--red font--chewy">
+          <?php
+          echo $event["start_age"] . " jaar - ";
+          if ($event["end_age"] < 99) echo $event["end_age"] ." jaar";
+          ?>
+        </strong>
         <strong>Zaal</strong>
         <strong class="margin-text size--24 color--red font--chewy">Tinnenpot - Becketzaal</strong>
         <strong>Prijs</strong>
@@ -111,5 +126,7 @@
       </section>
     </article>
   </section>
+
+  <a class="button margin--bottom" href="?page=programma">Terug naar programma</a>
 
 </section>

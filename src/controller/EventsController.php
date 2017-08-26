@@ -12,42 +12,55 @@ class EventsController extends Controller {
   }
 
   public function index() {
-    // $allEvents = $this->eventDAO->selectAll();
-    // $upcomingEvents = [];
-    //
-    // for ($i = 0; $i < 3; $i++) {
-    //   $upcomingEvents[$allEvents[$i]["id"]] = $allEvents[$i];
-    // }
-    //
-    // $this->setEvents($upcomingEvents);
+    $conditions = array();
+
+    $conditions[] = array(
+      'field' => 'start',
+      'comparator' => '>=',
+      'value' => '2017-12-01 00:00:00'
+    );
+
+    $conditions[] = array(
+      'field' => 'start',
+      'comparator' => '<',
+      'value' => '2018-01-31 23:59:59'
+    );
+
+    $events = $this->eventDAO->search($conditions);
+    $this->set('events', $events);
   }
 
   public function programma() {
-    // //Get & set all the months & tags from the database
-    // $this->setMonths();
-    // $this->setTags();
-    //
-    // //Set the events of the first month
-    // $this->setEvents($this->eventDAO->selectEventsByMonth($this->eventDAO->selectMonths()[0]["month"]));
-    //
-    // //Handle months submits
-    // $this->monthSubmit();
-    // $this->tagSubmit();
+    $conditions = array();
+
+    $conditions[] = array(
+      'field' => 'start',
+      'comparator' => '>=',
+      'value' => '2017-01-01 00:00:00'
+    );
+
+    $conditions[] = array(
+      'field' => 'start',
+      'comparator' => '<',
+      'value' => '2018-12-31 23:59:59'
+    );
+
+    $events = $this->eventDAO->search($conditions);
+    $this->set('events', $events);
   }
 
   public function details() {
-    // if (!isset($_GET["id"]) || empty($_GET["id"])) {
-    //   $this->redirect("index.php?page=programma");
-    //   exit();
-    // }
-    //
-    // $event = $this->eventDAO->selectById($_GET["id"]);
-    // if ($tags = $this->eventDAO->selectTagsByEventId($event["id"])) {
-    //   $event["tags"] = $tags;
-    // }
-    //
-    // $event["images"] = $this->getImages($event["images_id"]);
-    // $this->set("event", $event);
+    if (!isset($_GET["id"]) || empty($_GET["id"])) {
+      $this->redirect("index.php?page=programma");
+      exit();
+    }
+
+    $event = $this->eventDAO->selectById($_GET["id"]);
+    if ($tags = $this->eventDAO->selectTagsByEventId($event["id"])) {
+      $event["tags"] = $tags;
+    }
+
+    $this->set("event", $event);
   }
 
   private function setMonths() {
