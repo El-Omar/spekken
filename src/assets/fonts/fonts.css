@@ -15,13 +15,13 @@
 @font-face {
   font-family: 'OpenSans SemiBold';
   src: url(Open_Sans/OpenSans-SemiBold.ttf);
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OpenSans Bold';
   src: url(Open_Sans/OpenSans-Bold.ttf);
-  font-weight: normal;
+  font-weight: bolder;
   font-style: normal;
 }

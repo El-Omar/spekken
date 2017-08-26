@@ -12,8 +12,8 @@
         <h2 class="intro__article__title font--chewy color--orange size--30">Van waar komt 'Spekken'?</h2>
       </header>
       <p class="intro__text">
-        Spekken zijn niet alleen om van te smullen! <br />
-        Je hebt ze in alle kleuren, vormen en maten. <br />
+        Spekken zijn niet alleen om van te smullen! <br class="mobile-br" />
+        Je hebt ze in alle kleuren, vormen en maten. <br class="mobile-br" />
         En zo willen wij ook deze 'diversiteit' extra in de verf zetten. Enerzijds door het aanbod per leeftijd, anderzijds door de diverse genres.
       </p>
     </article>
@@ -27,22 +27,22 @@
     <h1>Eigenschappen van Spekken</h1>
   </header>
   <figure class="wat__figure container container--column">
-    <figcaption class='font--chewy color--white size--40'>Kerst en Paas</figcaption>
+    <figcaption class='font--chewy size--40'>Kerst en Paas</figcaption>
     <div class="wat__images">
       <img class='kerst' src="assets/img/kerst.png" alt="">
       <img class='paas' src="assets/img/paas.png" alt="">
     </div>
-    <p class="wat__text size--14 color--white font--opensans-semibold">
+    <p class="wat__text size--14 font--opensans-semibold">
       De voorstellingen vinden plaats in 2 periodes elke jaar, in Kerst- en Paasvakantie.
     </p>
   </figure>
 
   <figure class="wat__figure container container--column">
-    <figcaption class='font--chewy color--white size--40'>Veel smaken</figcaption>
+    <figcaption class='font--chewy size--40'>Veel smaken</figcaption>
     <div class="wat__images">
       <img class='smaken' src="assets/img/smaken.png" alt="">
     </div>
-    <p class="wat__text size--14 color--white font--opensans-semibold">
+    <p class="wat__text size--14 font--opensans-semibold">
       Door de verschillende <br />
       voorstellingen en activiteiten hier vind je zeker je smaak!
     </p>
@@ -128,7 +128,7 @@
       Zowel jong als oud kunnen terecht bij Tinnenpot.
     </p>
   </div>
-  <img src="assets/img/zalen.png" alt="Zalen">
+  <img class="tinnenpot__image" src="assets/img/zalen.png" alt="Zalen" />
 </section>
 
 <section class='praktisch container'>
@@ -187,7 +187,7 @@
   <header class="partners__header full--Width__wrap container">
     <h1 class="partners__title color--red font--chewy size--60">Coole partners</h1>
   </header>
-  <div class="partners__images container">
+  <div class="partners__images container container--row--wrap">
     <img class='partners__logo' src="assets/img/partner1.png" alt="Stad Gent" />
     <img class='partners__logo' src="assets/img/partner2.png" alt="Free Time" />
     <img class='partners__logo' src="assets/img/partner3.png" alt="Gentse Winterfeesten" />

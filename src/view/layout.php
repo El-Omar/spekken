@@ -5,6 +5,7 @@
   <title>SPEKKEN - Kindertheaterfestival</title>
   <meta name="author" content="Elomar">
   <meta name="description" content="Spekken website voor kindertheaterfestival">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
   WebFontConfig = {
     custom: {
@@ -28,7 +29,7 @@
 </head>
 <body>
   <header class='page__header'>
-    <a href="?page=home"><img src="assets/img/logo.png" alt="Logo" /></a>
+    <a href="?page=home"><img class="page__logo" src="assets/img/logo.png" alt="Logo" /></a>
     <ul class='page__nav'>
       <li class='page__nav__item'><a class='page__nav__link' href="?page=programma">PROGRAMMA</a></li>
       <li class='page__nav__item'><a class='page__nav__link' href="">PRAKTISCH</a></li>
@@ -36,14 +37,14 @@
     </ul>
   </header>
 
-  <div class="">
+  <div>
     <?php if(!empty($_SESSION['info'])): ?><div class="alert alert-success"><?php echo $_SESSION['info'];?></div><?php endif; ?>
     <?php if(!empty($_SESSION['error'])): ?><div class="alert alert-danger"><?php echo $_SESSION['error'];?></div><?php endif; ?>
 
     <?php echo $content; ?>
   </div>
 
-  <footer class='page__footer container'>
+  <footer class='page__footer container container'>
     <ul class="page__footer__nav">
       <li class="page__footer__nav__item"><a href="#" class="page__footer__nav__link">HOME</a></li>
       <li class="page__footer__nav__item"><a href="#" class="page__footer__nav__link">PROGRAMMA</a></li>
