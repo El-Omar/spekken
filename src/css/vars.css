@@ -1,0 +1,87 @@
+/* VARS */
+
+:root {
+  --red: #e1315b;
+  --blue: #008dcb;
+  --black: #242728;
+  --white: #fef5dd;
+  --yellow: #ffec5c;
+  --orange: #f47d4a;
+}
+
+/* COLORS */
+
+.color--red {
+  color: var(--red);
+}
+
+.color--blue {
+  color: var(--blue);
+}
+
+.color--black {
+  color: var(--black);
+}
+
+.color--white {
+  color: var(--white);
+}
+
+.color--yellow {
+  color: var(--yellow);
+}
+
+.color--orange {
+  color: var(--orange);
+}
+
+/* FONT FAMILY */
+
+.font--chewy {
+  font-family: Chewy;
+}
+
+.font--opensans-bold {
+  font-family: 'OpenSans Bold';
+}
+
+.font--opensans-semibold {
+  font-family: 'OpenSans SemiBold';
+}
+
+/* FONT SIZE */
+
+.size--14 {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+.size--20 {
+  font-size: 2rem;
+}
+
+.size--24 {
+  font-size: 2.4rem;
+}
+
+.size--30 {
+  font-size: 3rem;
+}
+
+.size--40 {
+  font-size: 4rem;
+}
+
+.size--60 {
+  font-size: 6rem;
+}
+
+/* SPACING */
+
+.full--Width__wrap {
+  width: 100%;
+}
+
+.margin--bottom {
+  margin-bottom: 5rem;
+}

@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Chewy;
+  src: url(Chewy/Chewy.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans Regular';
+  src: url(Open_Sans/OpenSans-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans SemiBold';
+  src: url(Open_Sans/OpenSans-SemiBold.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans Bold';
+  src: url(Open_Sans/OpenSans-Bold.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
