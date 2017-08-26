@@ -51,7 +51,7 @@
       </p>
     </div>
 
-    <img src="assets/img/example2.png" alt="Example2" />
+    <img class="details__second__image" src="assets/img/example2.png" alt="Example2" />
   </div>
 
   <section class='praktisch praktisch--details container'>
@@ -59,7 +59,7 @@
       <h1>Praktisch info</h1>
     </header>
 
-    <article class="tickets">
+    <article class="tickets tickets--details">
 
       <header class="tickets__header">
         <h2 class="font--opensans-bold size--30 color--white">In dezelfde week</h2>
@@ -71,8 +71,8 @@
         </header>
 
         <article class="upcoming__event container container--column">
-          <strong class='font--opensans-bold size--14 color--black'>#Circus</strong>
-          <strong class='upcoming__event__date font--chewy size--24 color--white'>26/12/2017</strong>
+          <strong class='font--opensans-bold size--14 color--red'>#Circus</strong>
+          <strong class='upcoming__event__date font--chewy size--24 color--black'>26/12/2017</strong>
 
           <div class="upcoming__event__poster">
             <header class="container upcoming__event__poster__header">
@@ -81,15 +81,12 @@
             <img class='upcoming__event__poster__image' src="assets/img/example.jpg" alt="">
           </div>
 
-          <p class='upcoming__event__desc font--opensans-semibold size--14'>
-            Te midden van vele gele kuikentjes wordt een zwart kuikentje geboren...
-          </p>
         </article>
       </section>
 
     </article>
 
-    <article class="locaties">
+    <article class="locaties locaties--details">
       <header class="tickets__header">
         <h2 class="font--opensans-bold size--30 color--black">Kan wel interessant zijn?</h2>
       </header>
@@ -110,9 +107,6 @@
             <img class='upcoming__event__poster__image' src="assets/img/example.jpg" alt="">
           </div>
 
-          <p class='upcoming__event__desc font--opensans-semibold size--14'>
-            Te midden van vele gele kuikentjes wordt een zwart kuikentje geboren...
-          </p>
         </article>
       </section>
     </article>

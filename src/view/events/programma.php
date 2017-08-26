@@ -1,19 +1,22 @@
 <section class='programma'>
 
-  <div class="programma__main__filter container">
-    <header class='programma__header'>
-      <h1 class='size--40 font--chewy color--orange'>Programma</h1>
-    </header>
+  <header class='programma__header bg-title container'>
+    <h1 class='size--40 font--chewy color--orange'>Programma</h1>
+  </header>
 
-    <aside class='periodes'>
-      <header class='periodes__header'>
-        <h2 class='periodes__title font--opensans-bold size--24'>Periodes</h2>
-      </header>
-      <div class=''>
-        <a class='periodes__button periodes__button--selected' href="#">Kerstvakantie</a>
-        <a class='periodes__button' href="#">Paasvakantie</a>
-      </div>
-    </aside>
+  <div class="programma__main__filter container">
+    <div class="toggle__container">
+      <aside class='periodes'>
+        <header class='periodes__header'>
+          <h2 class='periodes__title font--opensans-bold size--24'>Periodes</h2>
+        </header>
+        <div class=''>
+          <a class='periodes__button periodes__button--selected' href="#">Kerstvakantie</a>
+          <a class='periodes__button' href="#">Paasvakantie</a>
+        </div>
+      </aside>
+      <a class="filter__toggle filter__toggle--first" href="#">Filter</a>
+    </div>
 
     <aside class='datums'>
       <header class='datums__header'>
@@ -38,12 +41,11 @@
         </p>
       </a>
     </aside>
-
+    <a class="filter__toggle filter__toggle--second" href="#">Filter</a>
   </div>
 
-  <div class="second__main container container--row--wrap">
-    <div class="secondary__filter__wrap">
-      <div class="programma__secondary__filter">
+  <div class="secondary__filter__wrap secondary__filter__wrap--close container">
+
     <aside class="theater">
       <header class='theater__header'>
         <h2 class='theater__title font--opensans-bold size--24'>Theater</h2>
@@ -94,8 +96,10 @@
       <a class='leeftijd__button' href="#">4j tot 8j</a>
       <a class='leeftijd__button' href="#">8j tot 12j</a>
     </aside>
+
   </div>
-    </div>
+
+
     <div class="programma__events container container--row--wrap">
 
       <a class="programma__event__link" href="?page=details">
@@ -268,6 +272,6 @@
 
 
     </div>
-  </div>
+
 
 </section>

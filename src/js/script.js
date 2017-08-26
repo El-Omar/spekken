@@ -1,5 +1,4 @@
 {
-  let filterClosed = true;
 
   const init = () => {
     const $tags = document.querySelectorAll(`.theater__tag__checkbox`);
@@ -7,34 +6,28 @@
       $tag.addEventListener(`click`, toggleTag);
     });
 
-    const $filterButton = document.querySelector(`.filter-toggle-button`);
-    $filterButton.addEventListener(`click`, toggleFilter);
-
-    fetch(`index.php?page=schedule&amp;t=${Date.now()}`, {
-      headers: new Headers({Accept: `application/json`})
-    })
-    .then(r => r.json())
-    .then(parse);
+    const $filterToggleBtn = document.querySelectorAll(`.filter__toggle`);
+    $filterToggleBtn.forEach(btn => {
+      btn.addEventListener(`click`, toggleFilter);
+    });
   };
 
-  const parse = data => {
-    console.log(data);
-  };
+  const toggleFilter = ({currentTarget: tar}) => {
+    const $filter = document.querySelector(`.secondary__filter__wrap`);
 
-  const toggleFilter = () => {
-    filterClosed = !filterClosed;
-    const $filterForm = document.querySelector(`.filter-form`);
+    if (tar.classList.contains(`filter__toggle--active`)) {
 
-    if (filterClosed) {
-      $filterForm.classList.add(`hidden`);
-      $filterForm.parentNode.classList.add(`closed`);
-      $filterForm.parentNode.classList.remove(`opened`);
+      tar.classList.remove(`filter__toggle--active`);
+      $filter.classList.add(`secondary__filter__wrap--close`);
+      $filter.classList.remove(`secondary__filter__wrap--open`);
+
     } else {
-      $filterForm.classList.remove(`hidden`);
-      $filterForm.parentNode.classList.remove(`closed`);
-      // $filterForm.classList.add(`opened`);
-      $filterForm.parentNode.classList.add(`opened`);
+
+      tar.classList.add(`filter__toggle--active`);
+      $filter.classList.add(`secondary__filter__wrap--open`);
+      $filter.classList.remove(`secondary__filter__wrap--close`);
     }
+
 
   };
 
