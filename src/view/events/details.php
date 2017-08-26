@@ -3,6 +3,22 @@
     <h1 class="details__title font--chewy size--40 color--orange">Programma overzicht</h1>
   </header>
 
+  <?php
+  $desc = explode(' ', $event["description"]);
+  $firstParagraph = "";
+  $secondParagraph = "";
+
+  for ($i = 0; $i < 60; $i++) {
+    if (isset($desc[$i]))
+    $firstParagraph .= $desc[$i]. " ";
+  }
+
+  for ($i = 60; $i < count($desc); $i++) {
+    if (isset($desc[$i]))
+    $secondParagraph .= $desc[$i]. " ";
+  }
+?>
+
   <article class="details__article">
 
     <div class="details__content__wrap">
@@ -50,16 +66,11 @@
   <div class="details__second container">
     <div class="details__second__text">
       <p class="details__second__paragraph">
-        <strong class="font--opensans-bold">Te midden</strong> van vele gele kuikentjes wordt een zwart kuikentje geboren.
-        Het kuikentje is er onmiddellijk van overtuigd dat hij uit een ander ‘nest’ komt dan de rest, en hij wil de boer niet als papa zoals de andere
-        kuikens.
+        <?php echo $firstParagraph; ?>
       </P>
 
       <p class="details__second__paragraph">
-        Hij gaat op zoek naar zijn ware ‘zwarte’ ouders. Helaas zijn dat niet de honden, de poezen, de varkens… Hoort hij wel ergens bij ?
-        Bij de sluwe vos misschien, die zit immers lekkerbekkend gereed om het dolblije kuikentje te ontmoeten.
-        Kan Kim wel een gezinnetje vinden ? Een verhaal met onverwachte wendingen , een verrassend einde, grappige situaties…veel muziek en weinig woorden…
-
+        <?php echo $secondParagraph; ?>
         <br><br>
         <strong class="font--opensans-semibold size--20 color--red">Deel deze voorstelling</strong>
         <img src="assets/img/social-media.png" alt="social-media" />

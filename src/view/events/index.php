@@ -1,5 +1,6 @@
 <section class="intro">
-  <img class='intro__img' src="assets/img/spekken.png" alt="Spekken" />
+  <img class='intro__img' src="assets/img/spekken.png" alt="Spekken"
+  srcset="assets/img/spekken.png 1900w, assets/img/default.gif 900w" />
   <div class="intro__content">
     <header class="intro__header">
       <h1 class="font--chewy color--black intro__title">
@@ -18,7 +19,7 @@
       </p>
     </article>
 
-    <a href="#" class="button intro__button">Ontdek je smaak</a>
+    <a href="?page=programma" class="button intro__button">Ontdek je smaak</a>
   </div>
 </section>
 
@@ -63,7 +64,11 @@
 
       <div class="upcoming__event__poster">
         <header class="container upcoming__event__poster__header">
-          <h2 class="font--opensans-semibold size--14 color--white"><?php echo $events[$i]["title"] ?></h2>
+          <h2 class="font--opensans-semibold size--14 color--white">
+            <a href="?page=details&amp;id=<?php echo $events[$i]["id"] ?>">
+            <?php echo $events[$i]["title"] ?>
+            </a>
+          </h2>
         </header>
         <img class='upcoming__event__poster__image' src="assets/img/example.jpg" alt="">
       </div>

@@ -47,7 +47,7 @@
   <footer class='page__footer container container'>
     <ul class="page__footer__nav">
       <li class="page__footer__nav__item"><a href="#" class="page__footer__nav__link">HOME</a></li>
-      <li class="page__footer__nav__item"><a href="#" class="page__footer__nav__link">PROGRAMMA</a></li>
+      <li class="page__footer__nav__item"><a href="?page=programma" class="page__footer__nav__link">PROGRAMMA</a></li>
       <li class="page__footer__nav__item"><a href="#" class="page__footer__nav__link">PRAKTISCH</a></li>
       <li class="page__footer__nav__item"><a href="#" class="page__footer__nav__link">BLOGS</a></li>
     </ul>
